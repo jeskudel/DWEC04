@@ -90,17 +90,17 @@ Pero sobre todo, uno de los problemas evidentes viene a la hora de tener que ges
 ```js
 function doStep1(init, callback) {
   const result = init + 1;
-  callback(result);
+  return callback(result);
 }
 
 function doStep2(init, callback) {
   const result = init + 2;
-  callback(result);
+  return callback(result);
 }
 
 function doStep3(init, callback) {
   const result = init + 3;
-  callback(result);
+  return callback(result);
 }
 
 function doOperation() {
