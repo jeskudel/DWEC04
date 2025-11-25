@@ -73,7 +73,7 @@ fetch("/robots.txt")
 
 Algo muy importante, pero que quizás hemos pasado por alto es que el código que ejecutamos en el interior de un `.then()` es código asíncrono no bloqueante:
 
-* Asíncrono: Porque probablemente no se ejecuterá de inmediato, sino que tardará en ejecutarse.
+* Asíncrono: Porque probablemente no se ejecutará de inmediato, sino que tardará en ejecutarse.
 * No bloqueante: Porque mientras espera ser ejecutado, no bloquea el resto del programa.
 
 ¿Qué significa esto? Significa que cuando llegamos a un `.then()`, el sistema no se bloquea, sino que deja la función «pendiente» hasta que se cumpla la promesa, pero mientras, continua procesando el resto del programa. Observa el siguiente ejemplo:

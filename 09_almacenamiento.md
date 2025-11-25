@@ -44,7 +44,7 @@ console.log(document.cookie); // ...; my%20name=John%20Smith
 
 > #### *Tener en cuenta que ...*
 > * El par `name=value`, después de *encodeURIComponent*, no debe exceder 4KB.
-> * La cantidad total de cookies por dominio está limitada a alrededor de 20+, el límite exacto depende del navegador.
+> * La cantidad total de cookies por dominio está limitada a alrededor de 20, el límite exacto **depende del navegador**.
 
 ### Opciones de coockies
 
@@ -76,7 +76,7 @@ Para que las cookies sobrevivan al cierre del navegador, podemos usar las opcion
     
     ```js
     // +1 día desde ahora
-    let date = new Date(Date.now() + 86400e3);
+    let date = new Date(Date.now() + 86400000);
     date = date.toUTCString();
     document.cookie = "user=John; expires=" + date;
     ```
@@ -113,7 +113,7 @@ Ambos objetos de almacenaje proveen los mismos métodos y propiedades:
 
 ### Acceso a localStorage
 
-Las principales funcionalidades de localStorage son:
+Las principales funcionalidades de *localStorage* son:
 
 * Es compartido entre todas las pestañas y ventanas del mismo origen.
 * Los datos no expiran. Persisten a los reinicios de navegador y hasta del sistema operativo.

@@ -68,8 +68,9 @@ async function asincrona() { return 42; }
 sincrona();   // 42
 asincrona();  // Promise <fulfilled>: 42
 ```
+Las funciones asincrónicas son **funciones que devuelven promesas**. Esta es la razón por la que para entender realmente *Async/Await* necesitas saber cómo funcionan *promesas*.
 
-En principio, el comportamiento de `await` solo permite que se utilice en el interior de funciones declaradas como `async`. Por lo que, si el ejemplo anterior lo ejecutamos en una **consola de Javascript**, funcionará correctamente (estamos escribiendo comandos de forma asíncrona), pero si lo escribimos en un **fichero**, probablemente nos aparecerá un error.
+En principio, el comportamiento de `await` solo permite que se utilice en el interior de funciones declaradas como `async`. Por lo que, si el ejemplo anterior (el de la función **request()**)lo ejecutamos en una **consola de Javascript**, funcionará correctamente (estamos escribiendo comandos de forma asíncrona), pero si lo escribimos en un **fichero**, probablemente nos aparecerá un error.
 
 Esto ocurre porque estamos ejecutando `await` en el contexto global de la aplicación, y debemos ejecutarlo en un contexto de función **asíncrona**. Muchas veces, para solucionar esto, lo que se suele hacer es lo siguiente:
 
@@ -77,6 +78,8 @@ Esto ocurre porque estamos ejecutando `await` en el contexto global de la aplica
 function request() {
     return (async () => await fetch("/robots.txt"))();
 }
+
+request();
 ```
 
 ## Ejemplo del dado
